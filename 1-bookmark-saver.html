@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery</title>
-    <script type="module" crossorigin src="/apps-project/1-gallery.js"></script>
+    <title>Bookmark Saver</title>
+    <script type="module" crossorigin src="/apps-project/1-bookmark-saver.js"></script>
     <link rel="modulepreload" crossorigin href="/apps-project/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="modulepreload" crossorigin href="/apps-project/assets/vendor-CgTBfC_f.js">
-    <link rel="stylesheet" crossorigin href="/apps-project/assets/vendor-DkczhqSJ.css">
-    <link rel="stylesheet" crossorigin href="/apps-project/assets/styles-DlG4_mil.css">
+    <link rel="stylesheet" crossorigin href="/apps-project/assets/styles-DdqHbVVi.css">
   </head>
   <body>
     <header class="header">
@@ -22,8 +20,10 @@
           </a> -->
           <ul class="nav-list">
             <li class="nav-item">
-              <a class="nav-link {=$highlight-curr}" href="./2-form.html"
-                >Form</a
+              <a
+                class="nav-link {=$highlight-curr}"
+                href="./2-color-generation.html"
+                >Color Palette Generator</a
               >
             </li>
             <li class="nav-item">
@@ -34,8 +34,25 @@
       </div>
     </header>
     <main>
-      <div class="container">
-        <ul class="gallery"></ul>
+      <div class="container bookmark-wrapper">
+        <h1 class="bookmark-title">Bookmark Saver</h1>
+        <div class="bookmark-input-wrapper">
+          <input
+            class="bookmark-input"
+            type="text"
+            id="bookmark-name"
+            placeholder="Bookmark Name"
+          />
+          <input
+            class="bookmark-input"
+            type="url"
+            id="bookmark-url"
+            placeholder="Bookmark URL"
+          />
+          <button class="bookmark-btn" id="add-bookmark">Add Bookmark</button>
+        </div>
+
+        <ul id="bookmark-list"></ul>
       </div>
     </main>
   </body>
