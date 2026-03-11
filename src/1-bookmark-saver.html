@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery</title>
+    <title>Bookmark Saver</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
@@ -30,10 +30,27 @@
       </div>
     </header>
     <main>
-      <div class="container">
-        <ul class="gallery"></ul>
+      <div class="container bookmark-wrapper">
+        <h1 class="bookmark-title">Bookmark Saver</h1>
+        <div class="bookmark-input-wrapper">
+          <input
+            class="bookmark-input"
+            type="text"
+            id="bookmark-name"
+            placeholder="Bookmark Name"
+          />
+          <input
+            class="bookmark-input"
+            type="url"
+            id="bookmark-url"
+            placeholder="Bookmark URL"
+          />
+          <button class="bookmark-btn" id="add-bookmark">Add Bookmark</button>
+        </div>
+
+        <ul id="bookmark-list"></ul>
       </div>
     </main>
-    <script type="module" src="./js/1-gallery.js"></script>
+    <script type="module" src="./js/1-bookmark-saver.js"></script>
   </body>
 </html>
