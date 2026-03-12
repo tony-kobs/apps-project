@@ -8,103 +8,44 @@
     <link href="./css/7-validation-form.css" rel="stylesheet" />
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <nav class="nav">
-          <!-- <a class="nav-logo" href="./index.html" aria-label="Site logo">
-            <svg class="nav-logo-icon" width="100" height="30">
-              <use href="{=$icon-path}"></use>
-            </svg>
-          </a> -->
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a
-                class="nav-link {=$highlight-act}"
-                href="./1-bookmark-saver.html"
-                >Bookmark Saver</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link {=$highlight-curr}"
-                href="./2-color-generation.html"
-                >Color Palette Generator</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link {=$highlight-curr}"
-                href="./3-expense-tracker.html"
-                >Expense tracker</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {=$highlight-curr}" href="./4-todo-app.html"
-                >ToDo app</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link {=$highlight-curr}"
-                href="./5-pass-generator.html"
-                >Password Generator</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link {=$highlight-curr}"
-                href="./6-kanban-board.html"
-                >Kanban Board</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {=$highlight-curr}" href="./8-quiz-game.html"
-                >Quiz Game</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Go back</a>
-            </li>
-          </ul>
-        </nav>
+    <load src="./partials/back-link.html" />
+    <main>
+      <div class="registration-wrapper">
+        <form id="registration-form">
+          <h1>Register</h1>
+          <!-- Username -->
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="Enter username" />
+            <small></small>
+          </div>
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Enter email" />
+            <small></small>
+          </div>
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter password" />
+            <small></small>
+          </div>
+          <!-- confirm password -->
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              id="confirmPassword"
+              type="password"
+              placeholder="Confirm Password"
+            />
+            <small></small>
+          </div>
+          <!-- submit button -->
+          <button type="submit">Register</button>
+        </form>
       </div>
-    </header>
-
-    <div class="registration-wrapper">
-      <form id="registration-form">
-        <h1>Register</h1>
-        <!-- Username -->
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input id="username" type="text" placeholder="Enter username" />
-          <small></small>
-        </div>
-        <!-- Email -->
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input id="email" type="email" placeholder="Enter email" />
-          <small></small>
-        </div>
-        <!-- Password -->
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input id="password" type="password" placeholder="Enter password" />
-          <small></small>
-        </div>
-        <!-- confirm password -->
-        <div class="form-group">
-          <label for="confirmPassword">Confirm Password</label>
-          <input
-            id="confirmPassword"
-            type="password"
-            placeholder="Confirm Password"
-          />
-          <small></small>
-        </div>
-        <!-- submit button -->
-        <button type="submit">Register</button>
-      </form>
-    </div>
+    </main>
     <script src="./js/7-validation-form.js"></script>
   </body>
 </html>

@@ -23,12 +23,5 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
-}
-
-main {
-  flex-grow: 2;
-}
-
-main:has(.back-link) {
-  text-align: center;
+  padding: 50px 50px;
 }

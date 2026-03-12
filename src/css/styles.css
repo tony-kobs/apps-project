@@ -12,10 +12,6 @@
 
 /* Sections style */
 @import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
 @import url('./back-link.css');
 
 /* Works styles */
-@import url('./1-bookmark-saver.css');
-@import url('./2-color-generation.css');

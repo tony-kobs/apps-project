@@ -1,11 +1,14 @@
 .back-link {
-  position: relative;
+  position: absolute;
   display: inline-block;
+  top: 0;
+  right: 20px;
   padding: 4px 8px;
   margin-top: 32px;
   border: 1px solid;
   border-radius: 8px;
 }
+
 .back-link::before {
   content: '';
   position: absolute;
@@ -23,6 +26,7 @@
   animation: slide 500ms linear infinite alternate-reverse both;
   animation-play-state: paused;
 }
+
 .back-link:hover::before {
   opacity: 1;
   animation-play-state: running;

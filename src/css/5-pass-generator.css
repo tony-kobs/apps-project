@@ -36,11 +36,12 @@ body {
   padding: 20px;
 }
 
-.header {
+.back-link {
   color: #fff;
+  border-color: #fff;
 }
 
-.container {
+.container-wrapper {
   background-color: white;
   padding: 2.5rem;
   border-radius: 1rem;

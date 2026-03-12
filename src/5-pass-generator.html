@@ -12,63 +12,9 @@
     />
   </head>
   <body>
-    <header class="header">
-      <nav class="nav">
-        <!-- <a class="nav-logo" href="./index.html" aria-label="Site logo">
-            <svg class="nav-logo-icon" width="100" height="30">
-              <use href="{=$icon-path}"></use>
-            </svg>
-          </a> -->
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a class="nav-link {=$highlight-act}" href="./1-bookmark-saver.html"
-              >Bookmark Saver</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link {=$highlight-curr}"
-              href="./2-color-generation.html"
-              >Color Palette Generator</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link {=$highlight-curr}"
-              href="./3-expense-tracker.html"
-              >Expense tracker</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {=$highlight-curr}" href="./4-todo-app.html"
-              >ToDo app</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {=$highlight-curr}" href="./6-kanban-board.html"
-              >Kanban Board</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link {=$highlight-curr}"
-              href="./7-validation-form.html"
-              >Validation Form</a
-            >
-          </li>
-          <li class="nav-item">
-              <a class="nav-link {=$highlight-curr}" href="./8-quiz-game.html"
-                >Quiz Game</a
-              >
-            </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./index.html">Go back</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <load src="./partials/back-link.html" />
     <main>
-      <div class="container">
+      <div class="container-wrapper">
         <h1>Password Generator</h1>
         <!-- password container -->
         <div class="password-container">
