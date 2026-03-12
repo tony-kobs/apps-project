@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kanban Board</title>
-    <link rel="stylesheet" crossorigin href="/apps-project/assets/6-kanban-board-XGO83G_O.css">
+    <title>Form Validator</title>
+    <link rel="stylesheet" crossorigin href="/apps-project/assets/7-validation-form-DfaE9vfZ.css">
     <link rel="stylesheet" crossorigin href="/apps-project/assets/styles-C_3iLXuk.css">
   </head>
   <body>
@@ -53,8 +53,8 @@
             <li class="nav-item">
               <a
                 class="nav-link {=$highlight-curr}"
-                href="./7-validation-form.html"
-                >Validation Form</a
+                href="./6-kanban-board.html"
+                >Kanban Board</a
               >
             </li>
             <li class="nav-item">
@@ -65,27 +65,41 @@
       </div>
     </header>
 
-    <div class="kanban-wrapper">
-      <h1>Simple Kanban Board</h1>
-
-      <div class="board">
-        <!-- LIST 1 -->
-        <div class="list" id="list1">
-          <h2>To Do</h2>
-          <div class="card" draggable="true" id="card1">Wash dishes</div>
-          <div class="card" draggable="true" id="card2">Buy Groceries</div>
+    <div class="registration-wrapper">
+      <form id="registration-form">
+        <h1>Register</h1>
+        <!-- Username -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" type="text" placeholder="Enter username" />
+          <small></small>
         </div>
-        <!-- LIST 2 -->
-        <div class="list" id="list2">
-          <h2>In Progress</h2>
-          <div class="card" draggable="true" id="card3">Learn to code</div>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Enter email" />
+          <small></small>
         </div>
-        <!-- LIST 3 -->
-        <div class="list" id="list3">
-          <h2>Done</h2>
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Enter password" />
+          <small></small>
         </div>
-      </div>
+        <!-- confirm password -->
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            id="confirmPassword"
+            type="password"
+            placeholder="Confirm Password"
+          />
+          <small></small>
+        </div>
+        <!-- submit button -->
+        <button type="submit">Register</button>
+      </form>
     </div>
-    <script src="./js/6-kanban-board.js"></script>
+    <script src="./js/7-validation-form.js"></script>
   </body>
 </html>
