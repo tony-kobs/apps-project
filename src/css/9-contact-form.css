@@ -20,11 +20,6 @@ body {
   padding: 30px 15px;
 }
 
-main {
-  width: 100%;
-  margin: 0 auto;
-}
-
 .container-wrapper {
   width: 100%;
   margin: 0 auto;
@@ -50,7 +45,7 @@ main {
   }
 }
 
-h1 {
+.contact-form-title {
   color: var(--primary-color);
   font-size: 2.2rem;
   margin-bottom: 10px;
@@ -181,7 +176,7 @@ button:active {
     padding: 25px;
   }
 
-  h1 {
+  .contact-form-title {
     font-size: 1.8rem;
   }
 }

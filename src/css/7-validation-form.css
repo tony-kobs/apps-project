@@ -7,10 +7,6 @@ body {
   min-height: 100vh;
 }
 
-main {
-  width: 100%;
-}
-
 .registration-wrapper {
   background-color: #fff;
   border-radius: 8px;
@@ -22,7 +18,7 @@ main {
   overflow: hidden;
 }
 
-h1 {
+.register-title {
   text-align: center;
   color: #333;
   margin-bottom: 1.2rem;
