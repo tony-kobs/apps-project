@@ -35,6 +35,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  font-family: inherit;
 }
 
 img {
@@ -45,6 +46,7 @@ img {
 
 input,
 textarea {
+  font-family: inherit;
   outline: none;
   resize: none;
 }
