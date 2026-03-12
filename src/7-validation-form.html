@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apps project</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Form Validator</title>
+    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./css/7-validation-form.css" rel="stylesheet" />
   </head>
   <body>
     <header class="header">
@@ -58,18 +58,48 @@
               >
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link {=$highlight-curr}"
-                href="./7-validation-form.html"
-                >Validation Form</a
-              >
+              <a class="nav-link" href="./index.html">Go back</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
-    <main>
-      <!-- Loads the specified .html file -->
-    </main>
+
+    <div class="registration-wrapper">
+      <form id="registration-form">
+        <h1>Register</h1>
+        <!-- Username -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" type="text" placeholder="Enter username" />
+          <small></small>
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Enter email" />
+          <small></small>
+        </div>
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Enter password" />
+          <small></small>
+        </div>
+        <!-- confirm password -->
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            id="confirmPassword"
+            type="password"
+            placeholder="Confirm Password"
+          />
+          <small></small>
+        </div>
+        <!-- submit button -->
+        <button type="submit">Register</button>
+      </form>
+    </div>
+    <script src="./js/7-validation-form.js"></script>
   </body>
 </html>

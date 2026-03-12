@@ -51,35 +51,41 @@
               >
             </li>
             <li class="nav-item">
+              <a
+                class="nav-link {=$highlight-curr}"
+                href="./7-validation-form.html"
+                >Validation Form</a
+              >
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="./index.html">Go back</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
-    <main>
-      <div class="kanban-wrapper">
-        <h1>Simple Kanban Board</h1>
 
-        <div class="board">
-          <!-- LIST 1 -->
-          <div class="list" id="list1">
-            <h2>To Do</h2>
-            <div class="card" draggable="true" id="card1">Wash dishes</div>
-            <div class="card" draggable="true" id="card2">Buy Groceries</div>
-          </div>
-          <!-- LIST 2 -->
-          <div class="list" id="list2">
-            <h2>In Progress</h2>
-            <div class="card" draggable="true" id="card3">Learn to code</div>
-          </div>
-          <!-- LIST 3 -->
-          <div class="list" id="list3">
-            <h2>Done</h2>
-          </div>
+    <div class="kanban-wrapper">
+      <h1>Simple Kanban Board</h1>
+
+      <div class="board">
+        <!-- LIST 1 -->
+        <div class="list" id="list1">
+          <h2>To Do</h2>
+          <div class="card" draggable="true" id="card1">Wash dishes</div>
+          <div class="card" draggable="true" id="card2">Buy Groceries</div>
+        </div>
+        <!-- LIST 2 -->
+        <div class="list" id="list2">
+          <h2>In Progress</h2>
+          <div class="card" draggable="true" id="card3">Learn to code</div>
+        </div>
+        <!-- LIST 3 -->
+        <div class="list" id="list3">
+          <h2>Done</h2>
         </div>
       </div>
-    </main>
+    </div>
     <script src="./js/6-kanban-board.js"></script>
   </body>
 </html>

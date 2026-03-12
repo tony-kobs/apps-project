@@ -26,7 +26,7 @@ body {
 }
 
 main {
-  flex-grow: 1;
+  flex-grow: 2;
 }
 
 main:has(.back-link) {
