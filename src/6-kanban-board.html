@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apps project</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Kanban Board</title>
+    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./css/6-kanban-board.css" rel="stylesheet" />
   </head>
   <body>
     <header class="header">
@@ -51,18 +51,35 @@
               >
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link {=$highlight-curr}"
-                href="./6-kanban-board.html"
-                >Kanban Board</a
-              >
+              <a class="nav-link" href="./index.html">Go back</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
-      <!-- Loads the specified .html file -->
+      <div class="kanban-wrapper">
+        <h1>Simple Kanban Board</h1>
+
+        <div class="board">
+          <!-- LIST 1 -->
+          <div class="list" id="list1">
+            <h2>To Do</h2>
+            <div class="card" draggable="true" id="card1">Wash dishes</div>
+            <div class="card" draggable="true" id="card2">Buy Groceries</div>
+          </div>
+          <!-- LIST 2 -->
+          <div class="list" id="list2">
+            <h2>In Progress</h2>
+            <div class="card" draggable="true" id="card3">Learn to code</div>
+          </div>
+          <!-- LIST 3 -->
+          <div class="list" id="list3">
+            <h2>Done</h2>
+          </div>
+        </div>
+      </div>
     </main>
+    <script src="./js/6-kanban-board.js"></script>
   </body>
 </html>
