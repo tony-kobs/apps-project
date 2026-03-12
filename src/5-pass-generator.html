@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./css/5-pass-generator.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <!-- <a class="nav-logo" href="./index.html" aria-label="Site logo">
+            <svg class="nav-logo-icon" width="100" height="30">
+              <use href="{=$icon-path}"></use>
+            </svg>
+          </a> -->
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link {=$highlight-act}" href="./1-bookmark-saver.html"
+              >Bookmark Saver</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link {=$highlight-curr}"
+              href="./2-color-generation.html"
+              >Color Palette Generator</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link {=$highlight-curr}"
+              href="./3-expense-tracker.html"
+              >Expense tracker</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {=$highlight-curr}" href="./4-todo-app.html"
+              >ToDo app</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Go back</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Password Generator</h1>
+        <!-- password container -->
+        <div class="password-container">
+          <input type="text" readonly id="password" />
+          <i class="far fa-copy" id="copy-btn" title="Copy to clipboard"></i>
+        </div>
+        <!-- options -->
+        <div class="options">
+          <!-- passwords length -->
+          <div class="option">
+            <label for="length">Password Length</label>
+            <div class="range-container">
+              <input type="range" id="length" min="6" max="24" value="12" />
+              <span id="length-value">12</span>
+            </div>
+          </div>
+          <!-- include uppercase -->
+          <div class="option">
+            <label for="uppercase">Include Uppercase</label>
+            <input type="checkbox" id="uppercase" checked />
+          </div>
+          <!-- include lowercase -->
+          <div class="option">
+            <label for="lowercase">Include Lowercase</label>
+            <input type="checkbox" id="lowercase" checked />
+          </div>
+          <!-- include numbers -->
+          <div class="option">
+            <label for="numbers">Include Numbers</label>
+            <input type="checkbox" id="numbers" checked />
+          </div>
+          <!-- include symbols -->
+          <div class="option">
+            <label for="symbols">Include Symbols</label>
+            <input type="checkbox" id="symbols" checked />
+          </div>
+        </div>
+        <!-- button -->
+        <button id="generate-btn">
+          <i class="fas fa-key"></i>
+          Generate Password
+        </button>
+        <!-- strength container -->
+        <div class="strength-container">
+          <p>Password strength: <span id="strength-label">Medium</span></p>
+          <div class="strength-meter">
+            <div class="strength-bar"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/5-pass-generator.js"></script>
+  </body>
+</html>
