@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form Validator</title>
-    <link rel="stylesheet" crossorigin href="/apps-project/assets/7-validation-form-DfaE9vfZ.css">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" crossorigin href="/apps-project/assets/8-quiz-game-CwM5CrgA.css">
     <link rel="stylesheet" crossorigin href="/apps-project/assets/styles-C_3iLXuk.css">
   </head>
   <body>
@@ -58,8 +58,10 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link {=$highlight-curr}" href="./8-quiz-game.html"
-                >Quiz Game</a
+              <a
+                class="nav-link {=$highlight-curr}"
+                href="./7-validation-form.html"
+                >Validation Form</a
               >
             </li>
             <li class="nav-item">
@@ -70,41 +72,48 @@
       </div>
     </header>
 
-    <div class="registration-wrapper">
-      <form id="registration-form">
-        <h1>Register</h1>
-        <!-- Username -->
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input id="username" type="text" placeholder="Enter username" />
-          <small></small>
+    <div class="quiz-game-wrapper">
+      <!--  -->
+      <div class="screen active" id="start-screen">
+        <h1>Quiz Time!</h1>
+        <p>Test your knowledge with these fun questions</p>
+        <button id="start-btn">Start Quiz</button>
+      </div>
+      <!--  -->
+      <div class="screen" id="quiz-screen">
+        <div class="quiz-header">
+          <h2 id="question-text">Question goes here</h2>
+          <div class="quiz-info">
+            <p>
+              Question <span id="current-question">1</span> of
+              <span id="total-questions">5</span>
+            </p>
+            <p>Score: <span id="score">0</span></p>
+          </div>
         </div>
-        <!-- Email -->
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input id="email" type="email" placeholder="Enter email" />
-          <small></small>
+
+        <div class="answers-container" id="answers-container">
+          <!-- Answer buttons will be inserted here from our js code later at some point -->
         </div>
-        <!-- Password -->
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input id="password" type="password" placeholder="Enter password" />
-          <small></small>
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
         </div>
-        <!-- confirm password -->
-        <div class="form-group">
-          <label for="confirmPassword">Confirm Password</label>
-          <input
-            id="confirmPassword"
-            type="password"
-            placeholder="Confirm Password"
-          />
-          <small></small>
+      </div>
+      <!--  -->
+      <div class="screen" id="result-screen">
+        <h1>Quiz Results</h1>
+        <div class="result-info">
+          <p>
+            You scored <span id="final-score">0</span> out of
+            <span id="max-score">5</span>
+          </p>
+          <div id="result-message">Good job!</div>
         </div>
-        <!-- submit button -->
-        <button type="submit">Register</button>
-      </form>
+        <button id="restart-btn">Restart Quiz</button>
+      </div>
+      <!--  -->
     </div>
-    <script src="./js/7-validation-form.js"></script>
+
+    <script src="./js/8-quiz-game.js"></script>
   </body>
 </html>
