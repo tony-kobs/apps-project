@@ -1,0 +1,8 @@
+import"./assets/modulepreload-polyfill-B5Qt9EMX.js";/* empty css                      */const p=document.getElementById("balance"),E=document.getElementById("income-amount"),f=document.getElementById("expense-amount"),r=document.getElementById("transaction-list"),m=document.getElementById("transaction-form"),g=document.getElementById("description"),y=document.getElementById("amount"),u="transactions";let o=JSON.parse(localStorage.getItem(u))||[];m.addEventListener("submit",b);r.addEventListener("click",t=>{if(t.target.classList.contains("delete-btn")){const n=Number(t.target.dataset.id);L(n)}});function b(t){t.preventDefault();const n=g.value.trim(),a=parseFloat(y.value);if(!n||isNaN(a)){alert("Please fill all fields correctly");return}const e={id:Date.now(),description:n,amount:a};o.push(e),d(),i(),l(),m.reset()}function i(){r.innerHTML="",[...o].reverse().forEach(n=>{const a=I(n);r.appendChild(a)})}function I(t){const n=document.createElement("li");return n.classList.add("transaction"),n.classList.add(t.amount>0?"income":"expense"),n.innerHTML=`
+    <span>${t.description}</span>
+    <span class="amount">
+      ${c(t.amount)}
+      <button class="delete-btn" data-id="${t.id}">×</button>
+    </span>
+  `,n}function l(){const t=o.reduce((e,s)=>e+s.amount,0),n=o.filter(e=>e.amount>0).reduce((e,s)=>e+s.amount,0),a=o.filter(e=>e.amount<0).reduce((e,s)=>e+s.amount,0);p.textContent=c(t),E.textContent=c(n),f.textContent=c(a)}function c(t){return new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}).format(t)}function L(t){o=o.filter(n=>n.id!==t),d(),i(),l()}function d(){localStorage.setItem(u,JSON.stringify(o))}i();l();
+//# sourceMappingURL=3-expense-tracker.js.map
