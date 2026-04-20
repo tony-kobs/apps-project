@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Finder App</title>
+    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./css/12-recipe-finder.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <load src="./partials/back-link.html" />
+    <div class="container-recipe">
+      <header class="recipe-finder-head">
+        <h1 class="recipe-finder-title">
+          <i class="fas fa-utensils"></i>
+          Recipe Finder
+        </h1>
+        <p class="recipe-finder-info">
+          Find delicious recipes from around the world
+        </p>
+      </header>
+
+      <p class="api-link">
+        Data from
+        <a href="https://www.themealdb.com/api.php" target="_blank"
+          >TheMealDB</a
+        >
+      </p>
+
+      <div class="search-recipe-container">
+        <input
+          class="search-recipe-input"
+          type="text"
+          id="search-input"
+          placeholder="Search of meals or keywords..."
+        />
+        <button id="search-btn" class="search-btn">Search</button>
+      </div>
+
+      <div id="error-container" class="hidden error-wrapper">
+        <p>No recipes found for "". Try another search term!</p>
+      </div>
+
+      <div id="result-heading" class="result-wrapper"></div>
+      <div id="meals" class="meals-container"></div>
+      <div id="meal-details" class="hidden meal-details">
+        <button id="back-btn" class="back-btn">
+          <i class="fas fa-arrow-left"></i>Back to recipes
+        </button>
+        <div class="meal-detailes-content"></div>
+      </div>
+    </div>
+    <script type="module" src="./js/12-recipe-finder.js"></script>
+  </body>
+</html>
