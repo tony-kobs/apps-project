@@ -104,7 +104,7 @@ if (sliderList) {
     mousewheel: {
       enabled: true,
       forceToAxis: false,
-      sensitivity: 'auto',
+      sensitivity: 0.55,
       releaseOnEdges: true,
       thresholdDelta: 4,
     },
