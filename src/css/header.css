@@ -1,52 +1,380 @@
 .header {
-  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  padding: 40px 0;
 }
 
 .nav {
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
-/* .nav-logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-} */
+/* ===== MINIMAL SWIPER CORE — НЕ ВИДАЛЯТИ ===== */
 
-.nav-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-}
-
-.nav-link {
+.swiper {
   position: relative;
   display: block;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: 200ms ease-in;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
+.swiper-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+  transition-property: transform;
 }
 
-.nav-link::after {
+.swiper-slide {
+  position: relative;
+  flex-shrink: 0;
+  display: block;
+  transition-property: transform;
+}
+
+/* ===== PANORAMA ===== */
+
+.apps-panorama {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.panorama-swiper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 470px;
+  padding: 58px 0;
+  overflow: visible;
+  perspective: 1500px;
+}
+
+.panorama-swiper .swiper-wrapper {
+  align-items: center;
+  flex-direction: row;
+  transform-style: preserve-3d;
+  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.panorama-slide {
+  width: 260px;
+  height: 340px;
+  flex: 0 0 auto;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* ===== ATROPOS ===== */
+
+.app-atropos {
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.app-card-inner {
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  clip-path: inset(0 round 28px);
+  isolation: isolate;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* ===== CARD ===== */
+
+.app-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  padding: 22px;
+  border-radius: 28px;
+  overflow: hidden;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  background:
+    radial-gradient(
+      circle at 18% 0%,
+      rgba(130, 180, 255, 0.38),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 88% 100%,
+      rgba(255, 255, 255, 0.15),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.17),
+      rgba(255, 255, 255, 0.045)
+    );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 28px 72px rgba(0, 0, 0, 0.46),
+    0 0 28px rgba(120, 180, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+
+  transition:
+    box-shadow 280ms ease,
+    border-color 280ms ease,
+    filter 280ms ease;
+}
+
+.app-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+
+  box-shadow:
+    0 38px 100px rgba(0, 0, 0, 0.58),
+    0 0 44px rgba(120, 180, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+.app-card::before {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(100%);
-  width: 110%;
-  height: 4px;
-  border-radius: 4px;
-  transform-origin: center;
-  animation: stretch 400ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 200ms both;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.24) 42%,
+    transparent 70%
+  );
+
+  transform: translateX(-140%);
+  transition: transform 750ms ease;
+  pointer-events: none;
 }
 
-.nav-link.active::after {
-  background: #747bff;
+.app-card:hover::before {
+  transform: translateX(140%);
+}
+
+.app-card-bg {
+  position: absolute;
+  inset: -80px;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(130, 190, 255, 0.3),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 20% 90%,
+      rgba(255, 255, 255, 0.16),
+      transparent 30%
+    );
+
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+/* ===== CONTENT ===== */
+
+.app-card-index,
+.app-card-tag,
+.app-card-title,
+.app-card-link {
+  position: relative;
+  z-index: 2;
+  backface-visibility: hidden;
+}
+
+.app-card-index {
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.84);
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.15em;
+}
+
+.app-card-tag {
+  margin-top: auto;
+
+  color: #9fc7ff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.app-card-title {
+  max-width: 210px;
+  margin-top: 10px;
+
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.app-card-link {
+  margin-top: 22px;
+
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ===== TABLET ===== */
+
+@media (min-width: 768px) {
+  body {
+    padding: 40px 28px;
+  }
+
+  .header {
+    padding: 36px 0;
+  }
+
+  .panorama-swiper {
+    min-height: 510px;
+    padding: 66px 0;
+    perspective: 1500px;
+  }
+
+  .panorama-slide {
+    width: 310px;
+    height: 400px;
+  }
+
+  .app-atropos,
+  .app-card-inner,
+  .app-card {
+    border-radius: 32px;
+  }
+
+  .app-card-inner {
+    clip-path: inset(0 round 32px);
+  }
+
+  .app-card {
+    padding: 24px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .app-card-title {
+    max-width: 230px;
+    font-size: 34px;
+  }
+
+  .app-card-tag {
+    font-size: 13px;
+  }
+}
+
+/* ===== DESKTOP ===== */
+
+@media (min-width: 1028px) {
+  body {
+    padding: 50px;
+  }
+
+  .header {
+    padding: 40px 0;
+  }
+
+  .panorama-swiper {
+    min-height: 540px;
+    padding: 76px 0;
+    perspective: 1650px;
+  }
+
+  .panorama-slide {
+    width: 310px;
+    height: 390px;
+  }
+
+  .app-atropos,
+  .app-card-inner,
+  .app-card {
+    border-radius: 36px;
+  }
+
+  .app-card-inner {
+    clip-path: inset(0 round 36px);
+  }
+
+  .app-card {
+    padding: 26px;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+      0 34px 90px rgba(0, 0, 0, 0.48),
+      0 0 34px rgba(120, 180, 255, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  }
+
+  .app-card:hover {
+    box-shadow:
+      0 42px 110px rgba(0, 0, 0, 0.58),
+      0 0 46px rgba(120, 180, 255, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  }
+
+  .app-card-title {
+    max-width: 250px;
+    font-size: 38px;
+  }
+}
+
+/* ===== LARGE DESKTOP ===== */
+
+@media (min-width: 1440px) {
+  .panorama-swiper {
+    min-height: 590px;
+    padding: 90px 0;
+    perspective: 1800px;
+  }
+
+  .panorama-slide {
+    width: 340px;
+    height: 420px;
+  }
+
+  .app-card-title {
+    font-size: 42px;
+  }
 }
