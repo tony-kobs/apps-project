@@ -2,48 +2,62 @@ import Swiper from 'swiper';
 import { Mousewheel, FreeMode, Keyboard } from 'swiper/modules';
 import Atropos from 'atropos';
 
-const appsLinks = [
-  {
-    title: 'Bookmark Saver',
-    href: './1-bookmark-saver.html',
-    tag: 'Save links',
-  },
-  {
-    title: 'Color Palette Generator',
-    href: './2-color-generation.html',
-    tag: 'Colors',
-  },
-  {
-    title: 'Expense Tracker',
-    href: './3-expense-tracker.html',
-    tag: 'Finance',
-  },
-  { title: 'ToDo App', href: './4-todo-app.html', tag: 'Tasks' },
-  {
-    title: 'Password Generator',
-    href: './5-pass-generator.html',
-    tag: 'Security',
-  },
-  { title: 'Kanban Board', href: './6-kanban-board.html', tag: 'Workflow' },
-  { title: 'Validation Form', href: './7-validation-form.html', tag: 'Forms' },
-  { title: 'Quiz Game', href: './8-quiz-game.html', tag: 'Game' },
-  { title: 'Contact Form', href: './9-contact-form.html', tag: 'Contact' },
-  { title: 'Pricing Cards', href: './10-pricing-cards.html', tag: 'UI Cards' },
-  { title: 'Team Members', href: './11-team-members.html', tag: 'People' },
-  {
-    title: 'Recipe Finder App',
-    href: './12-recipe-finder.html',
-    tag: 'API App',
-  },
-];
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'atropos/css';
 
-const sliderList = document.querySelector('.js-apps-slider');
+async () => {
+  const appsLinks = [
+    {
+      title: 'Bookmark Saver',
+      href: './1-bookmark-saver.html',
+      tag: 'Save links',
+    },
+    {
+      title: 'Color Palette Generator',
+      href: './2-color-generation.html',
+      tag: 'Colors',
+    },
+    {
+      title: 'Expense Tracker',
+      href: './3-expense-tracker.html',
+      tag: 'Finance',
+    },
+    { title: 'ToDo App', href: './4-todo-app.html', tag: 'Tasks' },
+    {
+      title: 'Password Generator',
+      href: './5-pass-generator.html',
+      tag: 'Security',
+    },
+    { title: 'Kanban Board', href: './6-kanban-board.html', tag: 'Workflow' },
+    {
+      title: 'Validation Form',
+      href: './7-validation-form.html',
+      tag: 'Forms',
+    },
+    { title: 'Quiz Game', href: './8-quiz-game.html', tag: 'Game' },
+    { title: 'Contact Form', href: './9-contact-form.html', tag: 'Contact' },
+    {
+      title: 'Pricing Cards',
+      href: './10-pricing-cards.html',
+      tag: 'UI Cards',
+    },
+    { title: 'Team Members', href: './11-team-members.html', tag: 'People' },
+    {
+      title: 'Recipe Finder App',
+      href: './12-recipe-finder.html',
+      tag: 'API App',
+    },
+  ];
 
-if (sliderList) {
+  const sliderList = document.querySelector('.js-apps-slider');
+
+  if (!sliderList) return;
+
   sliderList.innerHTML = appsLinks
     .map(
       ({ title, href, tag }, index) => `
-        <li class="swiper-slide panorama-slide">
+      <li class="swiper-slide panorama-slide">
           <div class="atropos app-atropos">
             <div class="atropos-scale">
               <div class="atropos-rotate">
@@ -62,7 +76,7 @@ if (sliderList) {
             </div>
           </div>
         </li>
-      `
+    `
     )
     .join('');
 
@@ -144,4 +158,4 @@ if (sliderList) {
       },
     },
   });
-}
+};
