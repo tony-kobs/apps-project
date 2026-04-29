@@ -5,84 +5,30 @@
     <link rel="icon" type="image/svg+xml" href="/apps-project/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apps project</title>
-    <link rel="stylesheet" crossorigin href="/apps-project/assets/index-mokoAtg-.css">
-    <link rel="stylesheet" crossorigin href="/apps-project/assets/styles-DiYVYxal.css">
+    <script type="module" crossorigin src="/apps-project/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/apps-project/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="/apps-project/assets/vendor-BYuFqWsM.js">
+    <link rel="stylesheet" crossorigin href="/apps-project/assets/vendor-vL0Q9Dr-.css">
+    <link rel="stylesheet" crossorigin href="/apps-project/assets/index-C1n-tKUy.css">
+    <link rel="stylesheet" crossorigin href="/apps-project/assets/styles-BmnIkk_R.css">
   </head>
   <body>
+    <div id="tsparticles"></div>
     <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <!-- <a class="nav-logo" href="./index.html" aria-label="Site logo">
-            <svg class="nav-logo-icon" width="100" height="30">
-              <use href="{=$icon-path}"></use>
-            </svg>
-          </a> -->
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./1-bookmark-saver.html"
-            >Bookmark Saver</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link {=$highlight-curr}"
-            href="./2-color-generation.html"
-            >Color Palette Generator</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./3-expense-tracker.html"
-            >Expense tracker</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./4-todo-app.html"
-            >ToDo app</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./5-pass-generator.html"
-            >Password Generator</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./6-kanban-board.html"
-            >Kanban Board</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./7-validation-form.html"
-            >Validation Form</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./8-quiz-game.html"
-            >Quiz Game</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./9-contact-form.html"
-            >Contact Form</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./10-pricing-cards.html"
-            >Pricing Cards</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./11-team-members.html"
-            >Team Members</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./12-recipe-finder.html"
-            >Recipe Finder App</a
-          >
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <div class="header-shell">
+      <div class="header-topline">
+        <p class="header-eyebrow">Frontend Apps Collection</p>
+        <h1 class="header-title">Apps Project</h1>
+        <p class="header-text">
+          A polished collection of JavaScript mini apps with smooth navigation,
+          premium cards and interactive effects.
+        </p>
+      </div>
+  <section class="apps-panorama">
+    <div class="swiper panorama-swiper">
+      <ul class="swiper-wrapper js-apps-slider"></ul>
+    </div>
+  </section>
 </header>
 
     <main>
