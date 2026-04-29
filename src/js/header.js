@@ -1,126 +1,105 @@
 import Swiper from 'swiper';
-import { Mousewheel, FreeMode, Keyboard } from 'swiper/modules';
-import Atropos from 'atropos';
-
+import {
+  Mousewheel,
+  FreeMode,
+  Keyboard,
+  EffectCoverflow,
+} from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'atropos/css';
+import 'swiper/css/effect-coverflow';
 
-async () => {
-  const appsLinks = [
-    {
-      title: 'Bookmark Saver',
-      href: './1-bookmark-saver.html',
-      tag: 'Save links',
-    },
-    {
-      title: 'Color Palette Generator',
-      href: './2-color-generation.html',
-      tag: 'Colors',
-    },
-    {
-      title: 'Expense Tracker',
-      href: './3-expense-tracker.html',
-      tag: 'Finance',
-    },
-    { title: 'ToDo App', href: './4-todo-app.html', tag: 'Tasks' },
-    {
-      title: 'Password Generator',
-      href: './5-pass-generator.html',
-      tag: 'Security',
-    },
-    { title: 'Kanban Board', href: './6-kanban-board.html', tag: 'Workflow' },
-    {
-      title: 'Validation Form',
-      href: './7-validation-form.html',
-      tag: 'Forms',
-    },
-    { title: 'Quiz Game', href: './8-quiz-game.html', tag: 'Game' },
-    { title: 'Contact Form', href: './9-contact-form.html', tag: 'Contact' },
-    {
-      title: 'Pricing Cards',
-      href: './10-pricing-cards.html',
-      tag: 'UI Cards',
-    },
-    { title: 'Team Members', href: './11-team-members.html', tag: 'People' },
-    {
-      title: 'Recipe Finder App',
-      href: './12-recipe-finder.html',
-      tag: 'API App',
-    },
-  ];
+const appsLinks = [
+  {
+    title: 'Bookmark Saver',
+    href: './1-bookmark-saver.html',
+    tag: 'Save links',
+  },
+  {
+    title: 'Color Palette Generator',
+    href: './2-color-generation.html',
+    tag: 'Colors',
+  },
+  {
+    title: 'Expense Tracker',
+    href: './3-expense-tracker.html',
+    tag: 'Finance',
+  },
+  { title: 'ToDo App', href: './4-todo-app.html', tag: 'Tasks' },
+  {
+    title: 'Password Generator',
+    href: './5-pass-generator.html',
+    tag: 'Security',
+  },
+  { title: 'Kanban Board', href: './6-kanban-board.html', tag: 'Workflow' },
+  { title: 'Validation Form', href: './7-validation-form.html', tag: 'Forms' },
+  { title: 'Quiz Game', href: './8-quiz-game.html', tag: 'Game' },
+  { title: 'Contact Form', href: './9-contact-form.html', tag: 'Contact' },
+  { title: 'Pricing Cards', href: './10-pricing-cards.html', tag: 'Pricing' },
+  { title: 'Team Members', href: './11-team-members.html', tag: 'Team' },
+  { title: 'Recipe Finder', href: './12-recipe-finder.html', tag: 'Food' },
+];
 
+function createSlide({ title, href, tag }, index) {
+  return `
+    <li class="swiper-slide panorama-slide">
+      <a class="app-card" href="${href}">
+        <span class="app-card-top">
+          <span class="app-card-index">${String(index + 1).padStart(2, '0')}</span>
+          <span class="app-card-tag">${tag}</span>
+        </span>
+        <strong class="app-card-title">${title}</strong>
+        <span class="app-card-bottom">
+          <span class="app-card-line"></span>
+          <span class="app-card-link">Open app →</span>
+        </span>
+      </a>
+    </li>
+  `;
+}
+
+function initHeader() {
   const sliderList = document.querySelector('.js-apps-slider');
+  const sliderEl = document.querySelector('.panorama-swiper');
 
-  if (!sliderList) return;
+  if (!sliderList || !sliderEl) return;
 
-  sliderList.innerHTML = appsLinks
-    .map(
-      ({ title, href, tag }, index) => `
-      <li class="swiper-slide panorama-slide">
-          <div class="atropos app-atropos">
-            <div class="atropos-scale">
-              <div class="atropos-rotate">
-                <div class="atropos-inner app-card-inner">
-                  <a class="app-card" href="${href}">
-                    <span class="app-card-bg" data-atropos-offset="-5"></span>
-                    <span class="app-card-index" data-atropos-offset="2">
-                      ${String(index + 1).padStart(2, '0')}
-                    </span>
-                    <span class="app-card-tag" data-atropos-offset="4">${tag}</span>
-                    <span class="app-card-title" data-atropos-offset="8">${title}</span>
-                    <span class="app-card-link" data-atropos-offset="10">Open app ↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-    `
-    )
-    .join('');
+  sliderList.innerHTML = appsLinks.map(createSlide).join('');
 
-  document.querySelectorAll('.app-atropos').forEach(card => {
-    Atropos({
-      el: card,
-      activeOffset: 22,
-      shadow: true,
-      shadowScale: 1.02,
-      highlight: true,
-      rotateXMax: 5,
-      rotateYMax: 7,
-      rotateTouch: false,
-      duration: 260,
-    });
-  });
+  new Swiper(sliderEl, {
+    modules: [Mousewheel, FreeMode, Keyboard, EffectCoverflow],
 
-  new Swiper('.panorama-swiper', {
-    modules: [Mousewheel, FreeMode, Keyboard],
-
-    direction: 'horizontal',
-    loop: true,
+    effect: 'coverflow',
     slidesPerView: 'auto',
-    centeredSlides: true,
-    spaceBetween: 28,
-    speed: 700,
+    loop: true,
+    spaceBetween: 40,
+    speed: 500,
     grabCursor: true,
-    watchSlidesProgress: true,
-    slideToClickedSlide: true,
+    watchOverflow: true,
+    simulateTouch: true,
+    slideToClickedSlide: false,
+    centeredSlides: true,
+    centeredSlidesBounds: false,
+
+    slidesOffsetBefore: 160,
+    slidesOffsetAfter: 160,
+
+    preventClicks: true,
+    preventClicksPropagation: false,
+
+    coverflowEffect: {
+      rotate: 18,
+      stretch: -70,
+      depth: 140,
+      modifier: 1,
+      scale: 0.9,
+      slideShadows: false,
+    },
 
     freeMode: {
       enabled: true,
-      sticky: false,
       momentum: true,
-      momentumRatio: 0.85,
-      momentumVelocityRatio: 0.55,
-    },
-
-    mousewheel: {
-      enabled: true,
-      forceToAxis: false,
-      sensitivity: 0.55,
-      releaseOnEdges: true,
-      thresholdDelta: 4,
+      momentumRatio: 0.75,
+      sticky: true,
     },
 
     keyboard: {
@@ -128,34 +107,14 @@ async () => {
       onlyInViewport: true,
     },
 
-    on: {
-      progress(swiper) {
-        swiper.slides.forEach(slide => {
-          const progress = slide.progress;
-          const abs = Math.abs(progress);
-
-          const rotateY = progress * -13;
-          const translateX = progress * -18;
-          const translateZ = -Math.min(abs * 85, 170);
-          const scale = 1 - Math.min(abs * 0.08, 0.18);
-          const opacity = 1 - Math.min(abs * 0.14, 0.38);
-
-          slide.style.transform = `
-            translate3d(${translateX}px, 0, ${translateZ}px)
-            rotateY(${rotateY}deg)
-            scale(${scale})
-          `;
-
-          slide.style.opacity = String(opacity);
-          slide.style.zIndex = String(100 - Math.round(abs * 12));
-        });
-      },
-
-      setTransition(swiper, duration) {
-        swiper.slides.forEach(slide => {
-          slide.style.transitionDuration = `${duration}ms`;
-        });
-      },
+    mousewheel: {
+      enabled: true,
+      forceToAxis: false,
+      sensitivity: 0.3,
+      releaseOnEdges: false,
+      eventsTarget: '.panorama-swiper',
     },
   });
-};
+}
+
+document.addEventListener('DOMContentLoaded', initHeader);

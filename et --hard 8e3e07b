@@ -1,0 +1,23 @@
+[33m7caadcf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m change link in head
+[33m8e3e07b[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m refactor: change function
+[33medfb14b[m refactor: change sensitivity for swiper/header
+[33m973385e[m feat: add atropos and swiper for header-link refractor: change markup for header, and change styles for header
+[33m0e4c2a6[m feat: add new app, recipe-finder by tneMealDB
+[33mbff0082[m feat: add team members
+[33mbb4ec9f[m feat: add pricing cards
+[33m2135e4e[m refactor: add type="module" to script
+[33m6f96dcb[m refactor: add class for h1 and delete some styles
+[33mb6b4c60[m refactor: change some styles
+[33m1298a0d[m refactor: change some styles in 2 and 9
+[33m1cc8b08[m refactor: change markup, delete header, add back-link
+[33m8da6364[m feat: add contact form
+[33mf9d1ab0[m feat:add quiz-game
+[33m4466506[m feat: add validation form
+[33m53600e4[m feat: add kanban-board
+[33m656a0f4[m feat: add passwords generator refactor: change html markup in another files
+[33me9fdfad[m feat: add expense-tracker and todo app
+[33mf3f88c3[m refactor: change form on color palette generator
+[33m2dfb0cd[m feat: add bookmark-saver markup, style, and js
+[33m907bdcd[m Fix build script base path in package.json
+[33m0ec311d[m Update build script base path in package.json
+[33m3eaf9b3[m Initial commit
