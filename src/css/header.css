@@ -42,16 +42,16 @@
 }
 
 .apps-panorama {
+  padding-top: 60px;
   width: 100%;
   overflow: visible;
 }
 
 .panorama-swiper.swiper {
   width: 100%;
-  min-height: 560px;
-  padding: 90px 0;
+  max-height: 440px;
+  min-height: 440px;
   overflow: visible !important;
-  cursor: grab;
   user-select: none;
   box-sizing: border-box;
 }
@@ -67,6 +67,11 @@
   align-items: center !important;
 }
 
+.swiper-wrapper {
+  max-height: 560px;
+  min-height: 440px;
+}
+
 .panorama-swiper {
   transform: translateX(-30px);
 }
@@ -77,7 +82,7 @@
   min-width: 350px !important;
   max-width: 350px !important;
   flex: 0 0 350px !important;
-  height: 440px;
+  height: 440px !important;
   opacity: 0.74;
   transition:
     opacity 300ms ease,
@@ -104,6 +109,7 @@
   border-radius: 26px;
   text-decoration: none;
   color: #fff;
+  cursor: grab;
 
   background: linear-gradient(
     145deg,
