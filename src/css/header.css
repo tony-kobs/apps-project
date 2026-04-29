@@ -67,6 +67,10 @@
   align-items: center !important;
 }
 
+.panorama-swiper {
+  transform: translateX(-30px);
+}
+
 .swiper-slide,
 .panorama-slide {
   width: 350px !important;
