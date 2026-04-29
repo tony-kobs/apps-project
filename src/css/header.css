@@ -56,10 +56,6 @@
   box-sizing: border-box;
 }
 
-.panorama-swiper:active {
-  cursor: grabbing;
-}
-
 .js-apps-slider {
   margin: 0;
   padding: 0;

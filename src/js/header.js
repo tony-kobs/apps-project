@@ -78,10 +78,7 @@ function initHeader() {
     simulateTouch: true,
     slideToClickedSlide: false,
     centeredSlides: true,
-    centeredSlidesBounds: false,
-
-    slidesOffsetBefore: 160,
-    slidesOffsetAfter: 160,
+    centeredSlidesBounds: true,
 
     preventClicks: true,
     preventClicksPropagation: false,
