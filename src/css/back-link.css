@@ -1,33 +1,74 @@
 .back-link {
-  position: absolute;
-  display: inline-block;
-  top: 0;
-  right: 20px;
-  padding: 4px 8px;
-  margin-top: 32px;
-  border: 1px solid;
-  border-radius: 8px;
+  position: fixed;
+  top: 14px;
+  right: 24px;
+  z-index: 20;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-height: 34px;
+  padding: 6px 12px;
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  color: #ffffff;
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(35, 39, 65, 0.72);
+  backdrop-filter: blur(10px);
+
+  transition:
+    border-color 250ms ease,
+    background 250ms ease,
+    transform 250ms ease,
+    color 250ms ease;
 }
 
 .back-link::before {
   content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
 
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z'/%3E%3C/svg%3E");
-  transition: 300ms ease-in;
-  transition-property: opacity;
+  background-size: contain;
+
+  transform: rotate(180deg) translateX(-4px);
   opacity: 0;
-  animation: slide 500ms linear infinite alternate-reverse both;
-  animation-play-state: paused;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='rgba(35, 39, 65, 0.72)' d='M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z'/%3E%3C/svg%3E");
+
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease;
 }
 
-.back-link:hover::before {
+.back-link:hover,
+.back-link:focus-visible {
+  color: rgba(35, 39, 65, 0.72);
+  border-color: rgba(35, 39, 65, 0.72);
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.back-link:hover::before,
+.back-link:focus-visible::before {
   opacity: 1;
-  animation-play-state: running;
+  transform: rotate(180deg) translateX(0);
+}
+
+@media (max-width: 480px) {
+  .back-link {
+    top: 16px;
+    right: 16px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 }

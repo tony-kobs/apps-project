@@ -43,8 +43,6 @@ main {
   margin: 0 auto;
 }
 
-/* ===== TSPARTICLES BACKGROUND ===== */
-
 #tsparticles {
   position: fixed !important;
   inset: 0;
@@ -52,7 +50,7 @@ main {
   pointer-events: none;
 }
 
-body > *:not(#tsparticles) {
+body > *:not(#tsparticles):not(.back-link):not(.iziToast-wrapper) {
   position: relative;
   z-index: 1;
 }

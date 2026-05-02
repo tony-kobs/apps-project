@@ -13,23 +13,52 @@
     <main class="bookmark-main">
       <div class="bookmark-wrapper">
         <h1 class="bookmark-title">Bookmark Saver</h1>
+
         <div class="bookmark-input-wrapper">
-          <input
-            class="bookmark-input"
-            type="text"
-            id="bookmark-name"
-            placeholder="Bookmark Name"
-          />
-          <input
-            class="bookmark-input"
-            type="url"
-            id="bookmark-url"
-            placeholder="Bookmark URL"
-          />
-          <button class="bookmark-btn" id="add-bookmark">Add Bookmark</button>
+          <div class="bookmark-add-wrap">
+            <input
+              class="bookmark-input"
+              type="text"
+              id="bookmark-name"
+              placeholder="Bookmark Name"
+            />
+            <input
+              class="bookmark-input"
+              type="url"
+              id="bookmark-url"
+              placeholder="Bookmark URL"
+            />
+            <button class="bookmark-btn" id="add-bookmark">Add Bookmark</button>
+          </div>
+          <div class="bookmark-search-wrapper">
+            <input
+              class="bookmark-input bookmark-search-input"
+              type="text"
+              id="bookmark-search"
+              placeholder="Search bookmarks..."
+            />
+          </div>
         </div>
 
-        <ul id="bookmark-list"></ul>
+        <div class="bookmark-import-export">
+          <button class="bookmark-action-btn" id="export-json">
+            Export JSON
+          </button>
+
+          <label class="bookmark-action-btn bookmark-file-btn">
+            Import JSON
+            <input id="import-json" type="file" accept=".json" hidden />
+          </label>
+
+          <label class="bookmark-action-btn bookmark-file-btn">
+            Import Chrome
+            <input id="import-chrome" type="file" accept=".html,.htm" hidden />
+          </label>
+        </div>
+
+        <div class="bookmark-list-wrapper">
+          <ul id="bookmark-list"></ul>
+        </div>
       </div>
     </main>
     <script type="module" src="./js/1-bookmark-saver.js"></script>
