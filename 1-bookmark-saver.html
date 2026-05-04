@@ -7,10 +7,10 @@
     <title>Bookmark Saver</title>
     <script type="module" crossorigin src="/apps-project/1-bookmark-saver.js"></script>
     <link rel="modulepreload" crossorigin href="/apps-project/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="modulepreload" crossorigin href="/apps-project/assets/vendor-Cv5pCiM-.js">
+    <link rel="modulepreload" crossorigin href="/apps-project/assets/vendor-CdosXiC5.js">
     <link rel="stylesheet" crossorigin href="/apps-project/assets/vendor-7o4lOLNu.css">
-    <link rel="stylesheet" crossorigin href="/apps-project/assets/1-bookmark-saver-pLr4GR2V.css">
-    <link rel="stylesheet" crossorigin href="/apps-project/assets/styles-_xZfZTlP.css">
+    <link rel="stylesheet" crossorigin href="/apps-project/assets/1-bookmark-saver-BBcHn3me.css">
+    <link rel="stylesheet" crossorigin href="/apps-project/assets/styles-BHk6uSq_.css">
   </head>
   <body>
     <a class="back-link" href="./index.html">Go back</a>
@@ -58,6 +58,22 @@
             Import Chrome
             <input id="import-chrome" type="file" accept=".html,.htm" hidden />
           </label>
+        </div>
+
+        <div class="bookmark-folders-panel">
+          <div class="bookmark-folder-create">
+            <input
+              class="bookmark-input bookmark-folder-input"
+              type="text"
+              id="folder-name"
+              placeholder="Folder name"
+            />
+            <button class="bookmark-action-btn" id="create-folder">
+              Create Folder
+            </button>
+          </div>
+
+          <div class="bookmark-folders-wrapper" id="bookmark-folders"></div>
         </div>
 
         <div class="bookmark-list-wrapper">
